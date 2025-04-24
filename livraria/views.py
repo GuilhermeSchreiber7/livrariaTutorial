@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
-from livraria.models import Categoria
+from livraria.models import Categorias
 from livraria.serializers import CategoriaSerializer
 from livraria.models import Editora
 from livraria.serializers import EditoraSerializer
@@ -13,7 +13,7 @@ from livraria.serializers import LivroListSerializer
 
 # Create your views here.
 class CategoriaViewSet(ModelViewSet):
-    queryset=Categoria.objects.all()
+    queryset=Categorias.objects.all()
     serializer_class=CategoriaSerializer
 
 class EditoraViewSet(ModelViewSet):
