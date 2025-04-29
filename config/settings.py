@@ -37,21 +37,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'drf_spectacular',
-    'rest_framework',
-    'livraria',
     'corsheaders',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'drf_spectacular',
+    'django_extensions',
+    'livraria',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -107,12 +109,21 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     # "DEFAULT_AUTHENTICATION_CLASSES": ("core.authentication.TokenAuthentication",),
     # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly",),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    # "DEFAULT_PERMISSION_CLASSES": (
+    #     "rest_framework.permissions.DjangoModelPermissions",
+    # ),
     'DEFAULT_PAGINATION_CLASS': 'config.pagination.CustomPagination',
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'PAGE_SIZE': 10,
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.DjangoModelPermissions",
-    ],
+
+}
+
+
+SIMPLE_JWT = {
+    "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
 # Internationalization
