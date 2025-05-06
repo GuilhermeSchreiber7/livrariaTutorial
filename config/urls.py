@@ -7,6 +7,7 @@ from livraria.views import CategoriaViewSet
 from livraria.views import EditoraViewSet
 from livraria.views import AutorViewSet
 from livraria.views import LivroViewSet
+from usuario.router import router as usuario_router
 
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet)
@@ -23,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include(router.urls)),
     path("token/", TokenObtainPairView.as_view(), name= "take_obtain_pair"),
-    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh")
+    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/", include(usuario_router.urls))
 ]

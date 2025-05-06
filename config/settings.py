@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'django_extensions',
     'livraria',
+    'usuario',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +151,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True
+AUTH_USER_MODEL = 'usuario.Usuario'
