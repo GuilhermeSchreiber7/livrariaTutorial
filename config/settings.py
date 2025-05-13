@@ -121,7 +121,14 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'config.pagination.CustomPagination',
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'PAGE_SIZE': 10,
+    'DEFAULT_SCHEMA_CLASS': "drf_spectacular.openapi.AutoSchema",
 
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Livraria API",
+    "DESCRIPTION": "API para gerenciamento de livraria, incluindo incluindo endpoints e documentação",
+    "VERSION": "1.0.0", 
 }
 
 
