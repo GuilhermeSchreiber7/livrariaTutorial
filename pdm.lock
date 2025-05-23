@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:e4c4a2eb8859738b5c6beb6eaa66ad8b84d44a318f72af18c873793a439ee926"
+content_hash = "sha256:f854ed8a3ab4ba32a1a5faa7137362f1507c89a3b660d0e7c6ee2bdd9adae0ab"
 
 [[metadata.targets]]
 requires_python = "==3.12.*"
@@ -466,4 +466,15 @@ dependencies = [
 files = [
     {file = "uvicorn-0.34.2-py3-none-any.whl", hash = "sha256:deb49af569084536d269fe0a6d67e3754f104cf03aba7c11c40f01aadf33c403"},
     {file = "uvicorn-0.34.2.tar.gz", hash = "sha256:0e929828f6186353a80b58ea719861d2629d766293b6d19baf086ba31d4f3328"},
+]
+
+[[package]]
+name = "whitenoise"
+version = "6.9.0"
+requires_python = ">=3.9"
+summary = "Radically simplified static file serving for WSGI applications"
+groups = ["default"]
+files = [
+    {file = "whitenoise-6.9.0-py3-none-any.whl", hash = "sha256:c8a489049b7ee9889617bb4c274a153f3d979e8f51d2efd0f5b403caf41c57df"},
+    {file = "whitenoise-6.9.0.tar.gz", hash = "sha256:8c4a7c9d384694990c26f3047e118c691557481d624f069b7f7752a2f735d609"},
 ]
