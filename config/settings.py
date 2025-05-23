@@ -30,7 +30,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 if DEBUG:
     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = ["*"]  # você pode colocar seu domínio aqui, ex: 'meusite.fl0.io'
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'livrariatutorial.onrender.com'] 
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
