@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 # Hosts permitidos
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["livrariatutorial.onrender.com"]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
