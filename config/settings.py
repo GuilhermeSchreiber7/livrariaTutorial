@@ -27,12 +27,21 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 # Hosts permitidos
-ALLOWED_HOSTS = ["livrariatutorial.onrender.com"]
+ALLOWED_HOSTS = [
+    "livrariatutorial.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "https://*.fl0.io/",
+    "https://livrariatutorial.onrender.com",
+    "https://*.onrender.com",
 ]
 
 # Caminho base do projeto
@@ -167,6 +176,13 @@ USE_TZ = True
 
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = DEBUG  # True em dev, False em produção
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+else:
+    CORS_ALLOWED_ORIGINS = [
+        "https://livrariatutorial.onrender.com",
+        "http://localhost:3000",
+    ]
 
 # Usuário customizado
 AUTH_USER_MODEL = 'usuario.Usuario'
